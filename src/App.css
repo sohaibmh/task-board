@@ -1,0 +1,41 @@
+.mainContainer {
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+.boardsContainer {
+  background-color: black;
+  display: flex;
+  align-items: auto;
+}
+
+.board-1 {
+  background-color: cornflowerblue;
+  height: 100vh;
+  width: 20%;
+}
+
+.board-2 {
+  background-color: darkslategrey;
+  height: 100vh;
+  width: 20%;
+}
+
+.board-3 {
+  background-color: olivedrab;
+  height: 100vh;
+  width: 20%;
+}
+
+.board-4 {
+  background-color: purple;
+  height: 100vh;
+  width: 20%;
+}
+
+.board-5 {
+  background-color: darkslateblue;
+  height: 100vh;
+  width: 20%;
+}
