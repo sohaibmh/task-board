@@ -1,23 +1,60 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import "./App.css";
+import NewCard from "./components/NewCard";
+import NewBoard from "./components/NewBoard";
+import Boards from "./components/Boards";
+
+export const CardsContext = createContext();
+export const BoardsContext = createContext();
 
 function App() {
+  const [cards, setCards] = useState([
+    {
+      id: "1",
+      title: "Cooking",
+      description: "Make a pizza",
+      board: "To Do",
+    },
+    {
+      id: "2",
+      title: "Shopping",
+      description: "Buy ice cream",
+      board: "To Do",
+    },
+  ]);
+
+  const [boards, setBoards] = useState([
+    {
+      id: "1",
+      name: "To Do",
+      backgroundColour: "#ABC8C0",
+    },
+
+    {
+      id: "2",
+      name: "In Progress",
+      backgroundColour: "#427AA1",
+    },
+
+    {
+      id: "3",
+      name: "Completed",
+      backgroundColour: "#1B998B",
+    },
+  ]);
+
   return (
-    <div className="mainContainer">
-      <div className="boardsContainer">
-        <div className="board-1">
-          <div className="card-1" draggable>
-            Name: Sohaib
-            <br />
-            Address: 250 Church Hill Road
+    <CardsContext.Provider value={[cards, setCards]}>
+      <BoardsContext.Provider value={[boards, setBoards]}>
+        <div className="mainContainer">
+          <NewCard />
+          <NewBoard />
+          <div className="boardsContainer">
+            <Boards />
           </div>
         </div>
-        <div className="board-2"></div>
-        <div className="board-3"></div>
-        <div className="board-4"></div>
-        <div className="board-5"></div>
-      </div>
-    </div>
+      </BoardsContext.Provider>
+    </CardsContext.Provider>
   );
 }
 

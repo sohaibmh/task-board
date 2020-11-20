@@ -1,54 +1,32 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 8px;
+  }
+}
+
 .mainContainer {
   background-color: gray;
   color: white;
-  text-align: center;
 }
 
 .boardsContainer {
-  background-color: black;
-  display: flex;
-  align-items: auto;
-}
-
-.board-1 {
-  background-color: cornflowerblue;
-  height: 100vh;
-  width: 20%;
+  background-color: #212836;
   display: flex;
   justify-content: center;
-}
-
-.board-2 {
-  background-color: darkslategrey;
-  height: 100vh;
-  width: 20%;
-}
-
-.board-3 {
-  background-color: olivedrab;
-  height: 100vh;
-  width: 20%;
-}
-
-.board-4 {
-  background-color: purple;
-  height: 100vh;
-  width: 20%;
-}
-
-.board-5 {
-  background-color: darkslateblue;
-  height: 100vh;
-  width: 20%;
-}
-
-.card-1 {
-  background-color: cornsilk;
-  height: 10vh;
-  width: 94%;
-  margin-top: 6%;
-  color: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: black;
+  flex-grow: 1;
 }

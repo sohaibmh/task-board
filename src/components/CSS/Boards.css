@@ -1,0 +1,12 @@
+.board {
+  flex-basis: 20rem;
+  margin: 1rem 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  height: 100vh;
+}
+
+.boardName {
+  border-bottom: 0.05rem solid gray;
+  padding-bottom: 1rem;
+}
