@@ -4,12 +4,12 @@ import "./TaskCard.css";
 const TaskCard = ({ tasks, onDragStart }) => {
   return (
     <React.Fragment>
-      {console.log("cards", tasks)}
+      {console.log("tasks", tasks)}
       {tasks.map((t) => {
         return (
           <div
             className="taskCard"
-            draggable
+            draggable="true"
             onDragStart={(e) => onDragStart(e, t.id)}
           >
             Title: {t.title}

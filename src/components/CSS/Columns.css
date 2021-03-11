@@ -1,4 +1,4 @@
-.board {
+.column {
   flex-basis: 20rem;
   margin: 1rem 0.5rem;
   border-radius: 1rem;
@@ -6,7 +6,7 @@
   height: 100vh;
 }
 
-.boardName {
+.columnName {
   border-bottom: 0.05rem solid gray;
   padding-bottom: 1rem;
 }

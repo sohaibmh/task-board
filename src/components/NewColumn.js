@@ -1,24 +1,24 @@
 import React, { useState, useContext } from "react";
-import { BoardsContext } from "../App";
+import { ColumnsContext } from "../App";
+import "./CSS/NewColumn.css";
 
-const NewBoard = () => {
-  const [boards, setBoards] = useContext(BoardsContext);
+const NewColumn = () => {
+  const [columns, setColumns] = useContext(ColumnsContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const id = event.target.elements.id.value;
     const name = event.target.elements.name.value;
     const backgroundColour = event.target.elements.backgroundColour.value;
-    setBoards((prevBoards) => [
-      ...prevBoards,
+    setColumns((prevColumns) => [
+      ...prevColumns,
       { title: id, name, backgroundColour },
     ]);
   };
 
   return (
-    <>
+    <div className="newColumnForm">
       <form onSubmit={handleSubmit}>
-        New Board
         <div>
           <label htmlFor="id">ID: </label>
           <input id="id" type="text" />
@@ -33,8 +33,8 @@ const NewBoard = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
-    </>
+    </div>
   );
 };
 
-export default NewBoard;
+export default NewColumn;

@@ -1,22 +1,23 @@
 import React, { useState, useContext } from "react";
-import { CardsContext } from "../App";
+import { TasksContext } from "../App";
+import "./CSS/NewTask.css";
 
 const NewCard = () => {
-  const [cards, setCards] = useContext(CardsContext);
+  const [tasks, setTasks] = useContext(TasksContext);
 
-  console.log("cards....", cards);
+  console.log("tasks....", tasks);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const title = event.target.elements.title.value;
     const description = event.target.elements.description.value;
     const id = event.target.elements.id.value;
-    const board = event.target.elements.board.value;
-    setCards((prevCards) => [...prevCards, { title, description, id, board }]);
+    const column = event.target.elements.board.value;
+    setTasks((prevTasks) => [...prevTasks, { title, description, id, column }]);
   };
 
   return (
-    <>
+    <div className="newTaskForm">
       <form onSubmit={handleSubmit}>
         New Card
         <div>
@@ -37,7 +38,7 @@ const NewCard = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
-    </>
+    </div>
   );
 };
 

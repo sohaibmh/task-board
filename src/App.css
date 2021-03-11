@@ -19,12 +19,11 @@ body {
 }
 
 .mainContainer {
-  background-color: gray;
+  background-color: #212836;
   color: white;
 }
 
-.boardsContainer {
-  background-color: #212836;
+.columnsContainer {
   display: flex;
   justify-content: center;
   color: black;

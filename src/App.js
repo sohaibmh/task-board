@@ -1,29 +1,34 @@
 import React, { useState, createContext } from "react";
 import "./App.css";
-import NewCard from "./components/NewCard";
-import NewBoard from "./components/NewBoard";
-import Boards from "./components/Boards";
+import Columns from "./components/Columns";
+import MenuBar from "./components/MenuBar";
 
-export const CardsContext = createContext();
-export const BoardsContext = createContext();
+export const TasksContext = createContext();
+export const ColumnsContext = createContext();
 
 function App() {
-  const [cards, setCards] = useState([
+  const [tasks, setTasks] = useState([
     {
       id: "1",
       title: "Cooking",
       description: "Make a pizza",
-      board: "To Do",
+      column: "To Do",
     },
     {
       id: "2",
       title: "Shopping",
       description: "Buy ice cream",
-      board: "To Do",
+      column: "To Do",
+    },
+    {
+      id: "3",
+      title: "Reading",
+      description: "Read a book",
+      column: "To Do",
     },
   ]);
 
-  const [boards, setBoards] = useState([
+  const [columns, setColumns] = useState([
     {
       id: "1",
       name: "To Do",
@@ -44,17 +49,16 @@ function App() {
   ]);
 
   return (
-    <CardsContext.Provider value={[cards, setCards]}>
-      <BoardsContext.Provider value={[boards, setBoards]}>
+    <TasksContext.Provider value={[tasks, setTasks]}>
+      <ColumnsContext.Provider value={[columns, setColumns]}>
         <div className="mainContainer">
-          <NewCard />
-          <NewBoard />
-          <div className="boardsContainer">
-            <Boards />
+          <MenuBar />
+          <div className="columnsContainer">
+            <Columns />
           </div>
         </div>
-      </BoardsContext.Provider>
-    </CardsContext.Provider>
+      </ColumnsContext.Provider>
+    </TasksContext.Provider>
   );
 }
 
