@@ -13,14 +13,20 @@ const MenuBar = () => {
       <>
         <div className="options">
           {showNewTaskForm ? null : (
-            <button onClick={() => setShowNewColumnForm(!showNewColumnForm)}>
+            <button
+              className="menuBarButton"
+              onClick={() => setShowNewColumnForm(!showNewColumnForm)}
+            >
               Create New Column
             </button>
           )}
 
           {showNewColumnForm ? <NewColumn /> : null}
           {showNewColumnForm ? null : (
-            <button onClick={() => setShowNewTaskForm(!showNewTaskForm)}>
+            <button
+              className="menuBarButton"
+              onClick={() => setShowNewTaskForm(!showNewTaskForm)}
+            >
               Create New Task
             </button>
           )}
@@ -40,7 +46,7 @@ const MenuBar = () => {
         >
           Options
         </button>
-        <div className="optionsCard"> {expandOptions ? options() : null}</div>
+        {expandOptions ? <div className="optionsCard"> {options()}</div> : null}
       </div>
     </>
   );
