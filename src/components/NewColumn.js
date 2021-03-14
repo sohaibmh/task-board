@@ -19,19 +19,18 @@ const NewColumn = () => {
   return (
     <div className="newColumnForm">
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="id">ID: </label>
-          <input id="id" type="text" />
-        </div>
-        <div>
-          <label htmlFor="name">Name: </label>
-          <input id="name" type="text" />
-        </div>
-        <div>
-          <label htmlFor="backgroundColour">Background Colour: </label>
-          <input id="backgroundColour" type="text" />
-        </div>
-        <button type="submit">Submit</button>
+        <label htmlFor="id">ID </label>
+        <input id="id" type="text" />
+
+        <label htmlFor="name">Name</label>
+        <input id="name" type="text" />
+
+        <label htmlFor="backgroundColour">Background Colour </label>
+        <input type="color" id="backgroundColour" />
+
+        <button className="submitButton" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

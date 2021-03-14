@@ -19,26 +19,34 @@
   background-color: white;
   align-items: center;
   justify-content: center;
-  height: 300px;
-  width: 400px;
+  min-height: 300px;
+  min-width: 400px;
   border-radius: 0px 30px 30px 30px;
   position: absolute;
   border: 2px solid;
 }
 
-.menuBarButton {
+.menuBarButtons {
   width: 100%;
-  height: 20%;
+  height: 60px;
   outline: none;
-  /* border: none; */
+  border: 2px solid rgb(211, 206, 206);
+  margin-bottom: 4px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.menuBarButtons:hover {
+  background-color: rgb(210, 238, 245);
 }
 
 .options {
-  /* grid-template-columns: 1fr 1fr; */
-  height: 300px;
-  width: 400px;
+  min-height: 300px;
+  min-width: 400px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  margin: 20px 0px;
+  padding: 5px;
 }

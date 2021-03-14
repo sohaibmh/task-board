@@ -20,23 +20,17 @@ const NewCard = () => {
     <div className="newTaskForm">
       <form onSubmit={handleSubmit}>
         New Card
-        <div>
-          <label htmlFor="id">ID: </label>
-          <input id="id" type="text" />
-        </div>
-        <div>
-          <label htmlFor="title">Title: </label>
-          <input id="title" type="text" />
-        </div>
-        <div>
-          <label htmlFor="description">Description: </label>
-          <input id="description" type="text" />
-        </div>
-        <div>
-          <label htmlFor="board">Board: </label>
-          <input id="board" type="text" />
-        </div>
-        <button type="submit">Submit</button>
+        <label htmlFor="id">ID</label>
+        <input id="id" type="text" />
+        <label htmlFor="title">Title</label>
+        <input id="title" type="text" />
+        <label htmlFor="description">Description</label>
+        <input id="description" type="text" />
+        <label htmlFor="board">Board</label>
+        <input id="board" type="text" />
+        <button className="submitButton" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

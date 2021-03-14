@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./CSS/MenuBar.css";
 import NewTask from "./NewTask";
 import NewColumn from "./NewColumn";
@@ -7,14 +7,31 @@ const MenuBar = () => {
   const [expandOptions, setExpandOptions] = useState(false);
   const [showNewColumnForm, setShowNewColumnForm] = useState(false);
   const [showNewTaskForm, setShowNewTaskForm] = useState(false);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    window.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      window.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
+
+  const handleClickOutside = (event) => {
+    const { current: wrap } = wrapperRef;
+    if (wrap && !wrap.contains(event.target)) {
+      setExpandOptions(false);
+      setShowNewColumnForm(false);
+      setShowNewTaskForm(false);
+    }
+  };
 
   const options = () => {
     return (
       <>
-        <div className="options">
+        <div className="options" ref={wrapperRef}>
           {showNewTaskForm ? null : (
             <button
-              className="menuBarButton"
+              className="menuBarButtons"
               onClick={() => setShowNewColumnForm(!showNewColumnForm)}
             >
               Create New Column
@@ -24,7 +41,7 @@ const MenuBar = () => {
           {showNewColumnForm ? <NewColumn /> : null}
           {showNewColumnForm ? null : (
             <button
-              className="menuBarButton"
+              className="menuBarButtons"
               onClick={() => setShowNewTaskForm(!showNewTaskForm)}
             >
               Create New Task
