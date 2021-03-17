@@ -28,7 +28,7 @@ const MenuBar = () => {
   const options = () => {
     return (
       <>
-        <div className="options" ref={wrapperRef}>
+        <div className="options">
           {showNewTaskForm ? null : (
             <button
               className="menuBarButtons"
@@ -56,7 +56,7 @@ const MenuBar = () => {
 
   return (
     <>
-      <div className="menuBar">
+      <div className="menuBar" ref={wrapperRef}>
         <button
           className="optionsButton"
           onClick={() => setExpandOptions(!expandOptions)}
