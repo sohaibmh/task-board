@@ -8,15 +8,18 @@ export default class ColumnsDAO {
   static async getColumnListing() {
     const uri = process.env.TASKBOARD_DB_URI;
     const client = new MongoClient(uri);
+    let result = {};
 
     try {
       await client.connect();
-      await this.findOneListingByName(client, "Homework");
+      result = await this.findOneListingByName(client, "Homework");
     } catch (e) {
       console.error(e);
     } finally {
       await client.close();
     }
+
+    return result;
   }
 
   static async findOneListingByName(client, nameOfListing) {
@@ -33,5 +36,7 @@ export default class ColumnsDAO {
     } else {
       console.log(`No listings found with the name '${nameOfListing}'`);
     }
+
+    return result;
   }
 }
