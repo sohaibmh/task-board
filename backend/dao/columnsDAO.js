@@ -5,7 +5,7 @@ import mongodb from "mongodb";
 const MongoClient = mongodb.MongoClient;
 
 export default class ColumnsDAO {
-  static async main() {
+  static async getColumnListing() {
     const uri = process.env.TASKBOARD_DB_URI;
     const client = new MongoClient(uri);
 

@@ -9,7 +9,7 @@ const port = process.env.PORT || 8000;
 
 async function main() {
   try {
-    await ColumnsDAO.main();
+    await ColumnsDAO.getColumnListing();
 
     app.listen(port, () => {
       console.log(`listening to port ${port}`);

@@ -1,9 +1,6 @@
 import express from "express";
 import cors from "cors";
-import columns from "./api/columns.route.js";
-
-// used to allow environment variables in the env file
-// require("dotenv").config();
+import routes from "./api/routes.js";
 
 // creating the express server
 const app = express();
@@ -15,29 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // main route i.e. every route will start from this
-app.use("/api/v1/columns", columns);
+app.use("/api/v1", routes);
 app.use("*", (req, res) => res.status(404).json({ error: "not found ref12" }));
-
-// const port = process.env.PORT || 5000;
-
-// const uri = process.env.ATLAS_URI;
-// mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true });
-// const connection = mongoose.connection;
-// connection.once("open", () => {
-//   console.log("MongoDB connection established successfully");
-// });
-
-// const usersRouter = require("./routes/users");
-// const columnsRouter = require("./routes/columns");
-// const tasksRouter = require("./routes/tasks");
-
-// app.use("/users", usersRouter);
-// app.use("/columns", columnsRouter);
-// app.use("/tasks", tasksRouter);
-
-// starting the server
-// app.listen(port, () => {
-//   console.log(`Server is running on port: ${port}`);
-// });
 
 export default app;
